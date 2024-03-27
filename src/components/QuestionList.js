@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Update from "./Update";
 
 function QuestionList() {
   const [questions, setQuestions] = useState([]);
@@ -33,8 +32,11 @@ function QuestionList() {
     }
   };
 
+  const handleUpdate = async (idToUpdate) => {
+    // Placeholder function for update functionality
+    console.log("Update question with ID:", idToUpdate);
+  };
 
-handleUpdate
   return (
     <section>
       <h1>Quiz Questions</h1>
@@ -44,10 +46,10 @@ handleUpdate
             <h3>{question.prompt}</h3>
             <li>{question.correctIndex}</li>
             <button onClick={() => handleDelete(question.id)}>Delete</button>
+            <button onClick={() => handleUpdate(question.id)}>Update</button>
           </div>
         );
       })}
-      <button onClick={handleUpdate}></button>
     </section>
   );
 }
